@@ -10,14 +10,13 @@ public class Reader {
         api.getDish(name);
         
         for (int i = 0; i < api.json.getJSONArray("hits").length(); i++) {
-            Food food = new Food();
-            food.setLabel(((String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").get("label")))));
-            food.setCalories(Double.parseDouble(String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").getJSONObject("totalNutrients").getJSONObject("ENERC_KCAL").getDouble("quantity"))));
-            food.setFat(Double.parseDouble(String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").getJSONObject("totalNutrients").getJSONObject("FAT").getDouble("quantity"))));
-            food.setCarb(Double.parseDouble(String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").getJSONObject("totalNutrients").getJSONObject("CHOCDF").getDouble("quantity"))));
-            food.setProtein(Double.parseDouble(String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").getJSONObject("totalNutrients").getJSONObject("PROCNT").getDouble("quantity"))));
-            food.setWeight(Double.parseDouble(String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").getDouble("totalWeight"))));
-            foodList.add(food);
+            foodList.add(new Food());
+            foodList.get(i).setLabel(((String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").get("label")))));
+            foodList.get(i).setCalories(Double.parseDouble(String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").getJSONObject("totalNutrients").getJSONObject("ENERC_KCAL").getDouble("quantity"))));
+            foodList.get(i).setFat(Double.parseDouble(String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").getJSONObject("totalNutrients").getJSONObject("FAT").getDouble("quantity"))));
+            foodList.get(i).setCarb(Double.parseDouble(String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").getJSONObject("totalNutrients").getJSONObject("CHOCDF").getDouble("quantity"))));
+            foodList.get(i).setProtein(Double.parseDouble(String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").getJSONObject("totalNutrients").getJSONObject("PROCNT").getDouble("quantity"))));
+            foodList.get(i).setWeight(Double.parseDouble(String.valueOf(api.json.getJSONArray("hits").getJSONObject(i).getJSONObject("recipe").getDouble("totalWeight"))));
             System.out.println(foodList.get(i).getCalories());
 
         }
