@@ -1,11 +1,14 @@
 public class Food {
 
-    private double calories;
-    private String label;
-    private double weight;
-    private double carb;
-    private double fat;
-    private double protein;
+    private float calories;
+
+    public float getCalories() {
+        return calories;
+    }
+
+    public void setCalories(float calories) {
+        this.calories = calories;
+    }
 
     public String getLabel() {
         return label;
@@ -14,44 +17,55 @@ public class Food {
     public void setLabel(String label) {
         this.label = label;
     }
-    public double getCalories() {
-        return calories;
-    }
 
-    public void setCalories(double calories) {
-        this.calories = calories;
-    }
-
-    public double getWeight() {
+    public float getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
-    public double getCarb() {
+    public float getCarb() {
         return carb;
     }
 
-    public void setCarb(double carb) {
+    public void setCarb(float carb) {
         this.carb = carb;
     }
 
-    public double getFat() {
+    public float getFat() {
         return fat;
     }
 
-    public void setFat(double fat) {
+    public void setFat(float fat) {
         this.fat = fat;
     }
 
-    public double getProtein() {
+    public float getProtein() {
         return protein;
     }
 
-    public void setProtein(double protein) {
+    public void setProtein(float protein) {
         this.protein = protein;
     }
+
+    private String label;
+    private float weight;
+    private float carb;
+    private float fat;
+    private float protein;
+
+    public float getYield() {
+        return yield;
+    }
+
+    public void setYield(float yield) {
+        this.yield = yield;
+    }
+
+    private float yield;
+
+
 
 }
