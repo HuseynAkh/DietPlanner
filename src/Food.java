@@ -1,13 +1,22 @@
 public class Food {
 
-    private float calories;
+    private float initialCalories;
+    private float multiplierCalories;
 
-    public float getCalories() {
-        return calories;
+    public float getMultiplierCalories() {
+        return multiplierCalories;
     }
 
-    public void setCalories(float calories) {
-        this.calories = calories;
+    public void setMultiplierCalories(float multiplierCalories) {
+        this.multiplierCalories = multiplierCalories;
+    }
+
+    public float getInitialCalories() {
+        return initialCalories;
+    }
+
+    public void setInitialCalories(float initialcalories) {
+        this.initialCalories = initialcalories;
     }
 
     public String getLabel() {
@@ -63,6 +72,7 @@ public class Food {
     public void setYield(float yield) {
         this.yield = yield;
     }
+
 
     private float yield;
 

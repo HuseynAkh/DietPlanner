@@ -39,19 +39,6 @@ public class APIConnector {
     // end taken from stackoverflow
 
 
-    public List getFood(String name){
-        name = name.replace(" ", "%20");
-        try {
-            JSONObject json = readJsonFromUrl("https://api.edamam.com/api/food-database/parser?ingr=" + name +
-                    "&app_id=51df58c5&app_key=85977d4330b3722e04de260a12b6d9c9");
-
-            return (((JSONArray) json.get("parsed"))).toList();
-        } catch (IOException | JSONException e) {
-            return null;
-        }
-
-    }
-
     public List getDish(String name){
         name = name.replace(" ", "%20");
         try {

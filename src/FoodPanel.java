@@ -8,8 +8,32 @@ public class FoodPanel extends JPanel {
     private boolean breakfastChosen = false;
     private boolean lunchChosen = false;
     private boolean dinnerChosen = false;
-    private double servings;
+    private float servings;
     private boolean chosen = false;
+
+    public float getServings() {
+        return servings;
+    }
+
+    public void setServings(float servings) {
+        this.servings = servings;
+    }
+
+    public boolean isChosen() {
+        return chosen;
+    }
+
+    public void setBreakfastChosen(boolean breakfastChosen) {
+        this.breakfastChosen = breakfastChosen;
+    }
+
+    public void setLunchChosen(boolean lunchChosen) {
+        this.lunchChosen = lunchChosen;
+    }
+
+    public void setDinnerChosen(boolean dinnerChosen) {
+        this.dinnerChosen = dinnerChosen;
+    }
 
     public boolean isBreakfastChosen() {
         return breakfastChosen;
@@ -36,10 +60,10 @@ public class FoodPanel extends JPanel {
                 lunchChosen = true;
                 }
 
-                if (chosenSetting.equals("Lunch")){
+                if (chosenSetting.equals("Dinner")){
                 dinnerChosen = true;
                 }
-                servings = Double.parseDouble(numberOfServings.getText());
+                servings = Float.parseFloat(numberOfServings.getText());
         };
     });
         addButton.addActionListener(new ActionListener() {
@@ -108,12 +132,24 @@ public class FoodPanel extends JPanel {
     private JTextField numberOfServings;
     private JButton addButton;
 
+    public JButton getAddButton() {
+        return addButton;
+    }
+
+    public JTextField getNumberOfServings() {
+        return numberOfServings;
+    }
+
     public void foodPanelStart() {
         basicInformation.setText("Hello");
     }
 
     private void createUIComponents() {
 
+    }
+
+    public void NullComboBox(){
+        addTo.setSelectedItem(null);
     }
 
     public void initialize(){
