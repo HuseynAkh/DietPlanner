@@ -125,6 +125,8 @@ public class GUI {
         panel9.initialize();
         panel9.setVisible(false);
 
+
+
         input.setFont(input.getFont().deriveFont(20f));
         breakCalCount.setFont(breakCalCount.getFont().deriveFont(20f));
         lunchCalCount.setFont(lunchCalCount.getFont().deriveFont(20f));
@@ -361,6 +363,7 @@ public class GUI {
     public void refreshMealBreakfast() {
         float count = 0;
         DecimalFormat df = new DecimalFormat("#.##");
+        float tempNum = breakfast.getTotalCalories();
 
         if (breakfastRefreshMealNum == 0) {
             breakfast.setToprint(breakfast.getFood().get(breakfastRefreshMealNum).getLabel() + " Number of servings: " + breakfast.getFood().get(breakfastRefreshMealNum).getMultiplierCalories() + " Calories: " + df.format(breakfast.getFood().get(breakfastRefreshMealNum).getMultiplierCalories() * breakfast.getFood().get(breakfastRefreshMealNum).getInitialCalories()));
@@ -375,7 +378,7 @@ public class GUI {
         }
 
         breakfast.calculateTotalCal();
-        completeCalCount = completeCalCount + breakfast.getTotalCalories();
+        completeCalCount = completeCalCount + breakfast.getTotalCalories() - tempNum;
         breakCalCount.setText("Calories: " + df.format(breakfast.getTotalCalories()));
         totalCountField.setText("Calories: " + df.format(completeCalCount));
 
@@ -384,6 +387,7 @@ public class GUI {
     public void refreshMealLunch() {
         float count = 0;
         DecimalFormat df = new DecimalFormat("#.##");
+        float tempNum = lunch.getTotalCalories();
 
         if (lunchRefreshMealNum == 0) {
             lunch.setToprint(lunch.getFood().get(lunchRefreshMealNum).getLabel() + " Number of servings: " + lunch.getFood().get(lunchRefreshMealNum).getMultiplierCalories() + " Calories: " + df.format(lunch.getFood().get(lunchRefreshMealNum).getMultiplierCalories() * lunch.getFood().get(lunchRefreshMealNum).getInitialCalories()));
@@ -398,7 +402,7 @@ public class GUI {
             lunchRefreshMealNum++;
         }
             lunch.calculateTotalCal();
-            completeCalCount = completeCalCount + lunch.getTotalCalories();
+            completeCalCount = completeCalCount + lunch.getTotalCalories() - tempNum;
             lunchCalCount.setText("Calories: " + df.format(lunch.getTotalCalories()));
             totalCountField.setText("Calories: " + df.format(completeCalCount));
 
@@ -408,6 +412,8 @@ public class GUI {
     public void refreshMealDinner() {
         float count = 0;
         DecimalFormat df = new DecimalFormat("#.##");
+        float tempNum = dinner.getTotalCalories();
+
         if (dinnerRefreshMealNum == 0) {
             dinner.setToprint(dinner.getFood().get(dinnerRefreshMealNum).getLabel() + " Number of servings: " + dinner.getFood().get(dinnerRefreshMealNum).getMultiplierCalories() + " Calories: " + df.format(dinner.getFood().get(dinnerRefreshMealNum).getMultiplierCalories() * dinner.getFood().get(dinnerRefreshMealNum).getInitialCalories()));
             dinnerText.setText(dinner.getToprint());
@@ -422,7 +428,7 @@ public class GUI {
         }
 
         dinner.calculateTotalCal();
-        completeCalCount = completeCalCount + dinner.getTotalCalories();
+        completeCalCount = completeCalCount + dinner.getTotalCalories() - tempNum;
         dinnerCalCount.setText("Calories: " + df.format(dinner.getTotalCalories()));
         totalCountField.setText("Calories: " + df.format(completeCalCount));
 
