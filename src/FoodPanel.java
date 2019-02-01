@@ -10,42 +10,56 @@ public class FoodPanel extends JPanel {
     private boolean dinnerChosen = false;
     private float servings;
     private boolean chosen = false;
-
-    public float getServings() {
-        return servings;
-    }
-
-    public void setServings(float servings) {
-        this.servings = servings;
-    }
+    private JTextPane caloriesWeight;
+    private JTextField numberOfServings;
+    private JButton addButton;
+    private JPanel actualPanel;
+    private JComboBox addTo;
+    private JTextArea detailedInformation;
+    private JPanel upPanel;
+    private JPanel downPanel;
+    private JTextArea basicInformation;
 
     public boolean isChosen() {
         return chosen;
     }
-
     public void setBreakfastChosen(boolean breakfastChosen) {
         this.breakfastChosen = breakfastChosen;
     }
-
     public void setLunchChosen(boolean lunchChosen) {
         this.lunchChosen = lunchChosen;
     }
-
     public void setDinnerChosen(boolean dinnerChosen) {
         this.dinnerChosen = dinnerChosen;
     }
-
     public boolean isBreakfastChosen() {
         return breakfastChosen;
     }
-
     public boolean isLunchChosen() {
         return lunchChosen;
     }
-
     public boolean isDinnerChosen() {
         return dinnerChosen;
     }
+    public float getServings() {
+        return servings;
+    }
+    public JPanel getActualPanel() {
+        return actualPanel;
+    }
+    public JTextArea getBasicInformation() {
+        return basicInformation;
+    }
+    public JTextArea getDetailedInformation() {
+        return detailedInformation;
+    }
+    public JTextPane getCaloriesWeight() {
+        return caloriesWeight;
+    }
+    public JTextField getNumberOfServings() {
+        return numberOfServings;
+    }
+
 
     public FoodPanel() {
         addButton.addActionListener(new ActionListener() {
@@ -75,74 +89,7 @@ public class FoodPanel extends JPanel {
     }
 
 
-    public JPanel getActualPanel() {
-        return actualPanel;
-    }
 
-    public void setActualPanel(JPanel actualPanel) {
-        this.actualPanel = actualPanel;
-    }
-
-    public JComboBox getAddTo() {
-        return addTo;
-    }
-
-    public void setAddTo(JComboBox addTo) {
-        this.addTo = addTo;
-    }
-
-
-    private JPanel actualPanel;
-
-    private JComboBox addTo;
-
-
-
-    public JTextArea getBasicInformation() {
-        return basicInformation;
-    }
-
-    public void setBasicInformation(JTextArea basicInformation) {
-        this.basicInformation = basicInformation;
-    }
-
-    private JTextArea basicInformation;
-
-    public JTextArea getDetailedInformation() {
-        return detailedInformation;
-    }
-
-    public void setDetailedInformation(JTextArea detailedInformation) {
-        this.detailedInformation = detailedInformation;
-    }
-
-    private JTextArea detailedInformation;
-    private JPanel upPanel;
-    private JPanel downPanel;
-
-    public JTextPane getCaloriesWeight() {
-        return caloriesWeight;
-    }
-
-    public void setCaloriesWeight(JTextPane caloriesWeight) {
-        this.caloriesWeight = caloriesWeight;
-    }
-
-    private JTextPane caloriesWeight;
-    private JTextField numberOfServings;
-    private JButton addButton;
-
-    public JButton getAddButton() {
-        return addButton;
-    }
-
-    public JTextField getNumberOfServings() {
-        return numberOfServings;
-    }
-
-    public void foodPanelStart() {
-        basicInformation.setText("Hello");
-    }
 
     private void createUIComponents() {
 

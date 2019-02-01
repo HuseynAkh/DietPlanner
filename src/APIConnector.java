@@ -13,7 +13,12 @@ import org.json.JSONObject;
 
 public class APIConnector {
 
-    JSONObject json;
+    private JSONObject json;
+
+    public JSONObject getJson() {
+        return json;
+    }
+
     //taken from https://stackoverflow.com/questions/4308554/simplest-way-to-read-json-from-a-url-in-java
     private String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();

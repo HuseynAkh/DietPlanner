@@ -18,20 +18,7 @@ public class GUI {
     private int dinnerRefreshMealNum = 0;
     private double completeCalCount = 0;
 
-    private boolean buttonClicked = false;
 
-    Meal breakfast = new Meal();
-    Meal lunch = new Meal();
-    Meal dinner = new Meal();
-
-
-    public JPanel getMainPanel() {
-        return mainPanel;
-    }
-
-    public void setMainPanel(JPanel mainPanel) {
-        this.mainPanel = mainPanel;
-    }
 
     private JPanel mainPanel;
     private JPanel displayPanel;
@@ -61,6 +48,9 @@ public class GUI {
     private FoodPanel panel8 = new FoodPanel();
     private FoodPanel panel9 = new FoodPanel();
 
+    private Meal breakfast = new Meal();
+    private Meal lunch = new Meal();
+    private Meal dinner = new Meal();
 
     public void start() {
 
@@ -153,7 +143,7 @@ public class GUI {
                 newPanel = null;
                 panelList.clear();
                 displayPanel.removeAll();
-                reader.foodList.clear();
+                reader.getFoodList().clear();
                 displayPanel.revalidate();
 
 
@@ -182,7 +172,7 @@ public class GUI {
                 newPanel = null;
                 panelList.clear();
                 displayPanel.removeAll();
-                reader.foodList.clear();
+                reader.getFoodList().clear();
                 displayPanel.revalidate();
 
 
@@ -198,7 +188,7 @@ public class GUI {
     }
 
 
-    public void panelAdd() {
+    private void panelAdd() {
 
         int i = 0;
 
@@ -335,7 +325,7 @@ public class GUI {
     }
 
 
-    public void comboBoxRestart() {
+    private void comboBoxRestart() {
         panel0.NullComboBox();
         panel1.NullComboBox();
         panel2.NullComboBox();
@@ -360,7 +350,7 @@ public class GUI {
         panel9.getNumberOfServings().setText(null);
     }
 
-    public void refreshMealBreakfast() {
+    private void refreshMealBreakfast() {
         float count = 0;
         DecimalFormat df = new DecimalFormat("#.##");
         float tempNum = breakfast.getTotalCalories();
@@ -384,7 +374,7 @@ public class GUI {
 
     }
 
-    public void refreshMealLunch() {
+    private void refreshMealLunch() {
         float count = 0;
         DecimalFormat df = new DecimalFormat("#.##");
         float tempNum = lunch.getTotalCalories();
@@ -409,7 +399,7 @@ public class GUI {
 
     }
 
-    public void refreshMealDinner() {
+    private void refreshMealDinner() {
         float count = 0;
         DecimalFormat df = new DecimalFormat("#.##");
         float tempNum = dinner.getTotalCalories();
@@ -435,7 +425,7 @@ public class GUI {
     }
 
 
-    public void refreshButton() {
+    private void refreshButton() {
         if (panel0.isChosen()) {
 
             if (panel0.isBreakfastChosen() == true) {
