@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Dietplanner [Fix]:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Dietplanner__Fix__jar</output-path>
+    <root id="archive" name="Dietplanner [Fix].jar">
+      <element id="module-output" name="Dietplanner [Fix]" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Additional Libraries/json-20180813.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

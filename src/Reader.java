@@ -12,6 +12,7 @@ public class Reader {
         return foodList;
     }
 
+    //Searches for the dish in the API and fills in the results into food objects
     public void findDish(String name) {
         api.getDish(name);
         

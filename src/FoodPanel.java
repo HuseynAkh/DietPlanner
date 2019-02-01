@@ -60,7 +60,8 @@ public class FoodPanel extends JPanel {
         return numberOfServings;
     }
 
-
+    //Once AddButton is pressed
+    //Detects which meal has been chosen and tracks the desired number of servings
     public FoodPanel() {
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -99,6 +100,7 @@ public class FoodPanel extends JPanel {
         addTo.setSelectedItem(null);
     }
 
+    //Adding meals to ComboBox and changing appearance
     public void initialize(){
         addTo.addItem("Breakfast");
         addTo.addItem("Lunch");

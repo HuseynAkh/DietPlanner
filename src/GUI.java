@@ -54,6 +54,7 @@ public class GUI {
 
     public void start() {
 
+        //Basic Set-up of the GUI
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(mainPanel);
@@ -62,9 +63,9 @@ public class GUI {
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("DietPlanner");
         frame.setVisible(true);
-        displayPanel.setLayout(new GridLayout(10, 1));
+        displayPanel.setLayout(new GridLayout(10, 1)); //layout for FoodPanels
 
-
+        //initializing all the FoodPanels
         panel0 = new FoodPanel();
         panel0.setLayout(new BorderLayout());
         panel0.initialize();
@@ -116,7 +117,7 @@ public class GUI {
         panel9.setVisible(false);
 
 
-
+        //Changing text size
         input.setFont(input.getFont().deriveFont(20f));
         breakCalCount.setFont(breakCalCount.getFont().deriveFont(20f));
         lunchCalCount.setFont(lunchCalCount.getFont().deriveFont(20f));
@@ -137,24 +138,7 @@ public class GUI {
         searchDish.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                refreshButton();
-                panel = null;
-                newPanel = null;
-                panelList.clear();
-                displayPanel.removeAll();
-                reader.getFoodList().clear();
-                displayPanel.revalidate();
-
-
-                String in = input.getText();
-                reader.findDish(in);
-
-                panelAdd();
-                comboBoxRestart();
-                scrollPanel.getVerticalScrollBar().setValue(0);
-
-
+                startSearch();
 
             }
         });
@@ -167,26 +151,29 @@ public class GUI {
         input.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                refreshButton();
-                panel = null;
-                newPanel = null;
-                panelList.clear();
-                displayPanel.removeAll();
-                reader.getFoodList().clear();
-                displayPanel.revalidate();
-
-
-                String in = input.getText();
-                reader.findDish(in);
-                panelAdd();
-                comboBoxRestart();
-                scrollPanel.getVerticalScrollBar().setValue(1);
+                startSearch();
 
 
             }
         });
     }
 
+    //Clearing the FoodPanels, searching for new dish, inserting new information into FoodPanels
+    private void startSearch(){
+        refreshButton();
+        panel = null;
+        newPanel = null;
+        panelList.clear();
+        displayPanel.removeAll();
+        reader.getFoodList().clear();
+        displayPanel.revalidate();
+
+
+        String in = input.getText();
+        reader.findDish(in);
+        panelAdd();
+        comboBoxRestart();
+    }
 
     private void panelAdd() {
 
@@ -324,7 +311,7 @@ public class GUI {
         i++;
     }
 
-
+    //Resetting the ComboBoxes for all FoodPanels
     private void comboBoxRestart() {
         panel0.NullComboBox();
         panel1.NullComboBox();
@@ -350,6 +337,7 @@ public class GUI {
         panel9.getNumberOfServings().setText(null);
     }
 
+    //Adds new meal to Breakfast and re-calculates Total Calories
     private void refreshMealBreakfast() {
         float count = 0;
         DecimalFormat df = new DecimalFormat("#.##");
@@ -374,6 +362,7 @@ public class GUI {
 
     }
 
+    //Adds new meal to Lunch and re-calculates Total Calories
     private void refreshMealLunch() {
         float count = 0;
         DecimalFormat df = new DecimalFormat("#.##");
@@ -399,6 +388,7 @@ public class GUI {
 
     }
 
+    //Adds new meal to Dinner and re-calculates Total Calories
     private void refreshMealDinner() {
         float count = 0;
         DecimalFormat df = new DecimalFormat("#.##");
@@ -424,7 +414,8 @@ public class GUI {
 
     }
 
-
+    //Activated when pressing the "Done" button  or searching for new dish
+    //Detects if there was a new meal added and takes appropriate actions
     private void refreshButton() {
         if (panel0.isChosen()) {
 

@@ -44,6 +44,7 @@ public class APIConnector {
     // end taken from stackoverflow
 
 
+    //Searches for the meal in API
     public List getDish(String name){
         name = name.replace(" ", "%20");
         try {
