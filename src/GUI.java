@@ -344,12 +344,12 @@ public class GUI {
         float tempNum = breakfast.getTotalCalories();
 
         if (breakfastRefreshMealNum == 0) {
-            breakfast.setToprint(breakfast.getFood().get(breakfastRefreshMealNum).getLabel() + " Number of servings: " + breakfast.getFood().get(breakfastRefreshMealNum).getMultiplierCalories() + " Calories: " + df.format(breakfast.getFood().get(breakfastRefreshMealNum).getMultiplierCalories() * breakfast.getFood().get(breakfastRefreshMealNum).getInitialCalories()));
+            breakfast.setToprint(breakfast.getFood().get(breakfastRefreshMealNum).getLabel() + " || Number of servings: " + breakfast.getFood().get(breakfastRefreshMealNum).getMultiplierCalories() + " || Calories: " + df.format(breakfast.getFood().get(breakfastRefreshMealNum).getMultiplierCalories() * breakfast.getFood().get(breakfastRefreshMealNum).getInitialCalories()));
             breakfText.setText(breakfast.getToprint());
 
             breakfastRefreshMealNum++;
         } else {
-            breakfast.setToprint(breakfast.getToprint() + "\n" + breakfast.getFood().get(breakfastRefreshMealNum).getLabel() + " Number of servings: " + breakfast.getFood().get(breakfastRefreshMealNum).getMultiplierCalories() + " Calories: " + df.format(breakfast.getFood().get(breakfastRefreshMealNum).getMultiplierCalories() * breakfast.getFood().get(breakfastRefreshMealNum).getInitialCalories()) );
+            breakfast.setToprint(breakfast.getToprint() + "\n" + breakfast.getFood().get(breakfastRefreshMealNum).getLabel() + " || Number of servings: " + breakfast.getFood().get(breakfastRefreshMealNum).getMultiplierCalories() + " || Calories: " + df.format(breakfast.getFood().get(breakfastRefreshMealNum).getMultiplierCalories() * breakfast.getFood().get(breakfastRefreshMealNum).getInitialCalories()) );
             breakfText.setText(breakfast.getToprint());
 
             breakfastRefreshMealNum++;
@@ -369,13 +369,13 @@ public class GUI {
         float tempNum = lunch.getTotalCalories();
 
         if (lunchRefreshMealNum == 0) {
-            lunch.setToprint(lunch.getFood().get(lunchRefreshMealNum).getLabel() + " Number of servings: " + lunch.getFood().get(lunchRefreshMealNum).getMultiplierCalories() + " Calories: " + df.format(lunch.getFood().get(lunchRefreshMealNum).getMultiplierCalories() * lunch.getFood().get(lunchRefreshMealNum).getInitialCalories()));
+            lunch.setToprint(lunch.getFood().get(lunchRefreshMealNum).getLabel() + " || Number of servings: " + lunch.getFood().get(lunchRefreshMealNum).getMultiplierCalories() + " || Calories: " + df.format(lunch.getFood().get(lunchRefreshMealNum).getMultiplierCalories() * lunch.getFood().get(lunchRefreshMealNum).getInitialCalories()));
             lunchText.setText(lunch.getToprint());
 
             lunchRefreshMealNum++;
 
         } else {
-            lunch.setToprint(lunch.getToprint() + "\n" + lunch.getFood().get(lunchRefreshMealNum).getLabel() + " Number of servings: " + lunch.getFood().get(lunchRefreshMealNum).getMultiplierCalories() + " Calories: " + df.format(lunch.getFood().get(lunchRefreshMealNum).getMultiplierCalories() * lunch.getFood().get(lunchRefreshMealNum).getInitialCalories()));
+            lunch.setToprint(lunch.getToprint() + "\n" + lunch.getFood().get(lunchRefreshMealNum).getLabel() + " || Number of servings: " + lunch.getFood().get(lunchRefreshMealNum).getMultiplierCalories() + " || Calories: " + df.format(lunch.getFood().get(lunchRefreshMealNum).getMultiplierCalories() * lunch.getFood().get(lunchRefreshMealNum).getInitialCalories()));
             lunchText.setText(lunch.getToprint());
 
             lunchRefreshMealNum++;
@@ -395,13 +395,13 @@ public class GUI {
         float tempNum = dinner.getTotalCalories();
 
         if (dinnerRefreshMealNum == 0) {
-            dinner.setToprint(dinner.getFood().get(dinnerRefreshMealNum).getLabel() + " Number of servings: " + dinner.getFood().get(dinnerRefreshMealNum).getMultiplierCalories() + " Calories: " + df.format(dinner.getFood().get(dinnerRefreshMealNum).getMultiplierCalories() * dinner.getFood().get(dinnerRefreshMealNum).getInitialCalories()));
+            dinner.setToprint(dinner.getFood().get(dinnerRefreshMealNum).getLabel() + " || Number of servings: " + dinner.getFood().get(dinnerRefreshMealNum).getMultiplierCalories() + " || Calories: " + df.format(dinner.getFood().get(dinnerRefreshMealNum).getMultiplierCalories() * dinner.getFood().get(dinnerRefreshMealNum).getInitialCalories()));
             dinnerText.setText(dinner.getToprint());
 
             dinnerRefreshMealNum++;
 
         } else {
-            dinner.setToprint(dinner.getToprint() + "\n" + dinner.getFood().get(dinnerRefreshMealNum).getLabel() + " Number of servings: " + dinner.getFood().get(dinnerRefreshMealNum).getMultiplierCalories() + " Calories: " + df.format(dinner.getFood().get(dinnerRefreshMealNum).getMultiplierCalories() * dinner.getFood().get(dinnerRefreshMealNum).getInitialCalories()));
+            dinner.setToprint(dinner.getToprint() + "\n" + dinner.getFood().get(dinnerRefreshMealNum).getLabel() + " || Number of servings: " + dinner.getFood().get(dinnerRefreshMealNum).getMultiplierCalories() + " || Calories: " + df.format(dinner.getFood().get(dinnerRefreshMealNum).getMultiplierCalories() * dinner.getFood().get(dinnerRefreshMealNum).getInitialCalories()));
             dinnerText.setText(dinner.getToprint());
 
             dinnerRefreshMealNum++;
