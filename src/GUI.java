@@ -52,6 +52,8 @@ public class GUI {
     private Meal lunch = new Meal();
     private Meal dinner = new Meal();
 
+
+
     public void start() {
 
         //Basic Set-up of the GUI
@@ -64,6 +66,7 @@ public class GUI {
         frame.setTitle("DietPlanner");
         frame.setVisible(true);
         displayPanel.setLayout(new GridLayout(10, 1)); //layout for FoodPanels
+
 
         //initializing all the FoodPanels
         panel0 = new FoodPanel();

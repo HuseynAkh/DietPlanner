@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Reader {
 
-    private APIConnector api = new APIConnector();
 
-    private ArrayList<Food> foodList = new ArrayList<Food>();
+    private APIConnector api = new APIConnector(); //Creates the API for the retrieval of data
+    private ArrayList<Food> foodList = new ArrayList<Food>(); //Used to store all the data for each food that was found by the APIConnector
 
 
 
